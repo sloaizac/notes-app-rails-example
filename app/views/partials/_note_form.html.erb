@@ -1,0 +1,14 @@
+<div class="form col-md-10">
+  <h1><%= name %> nota</h1>
+  <%= form_for(@note) do |f|%>
+    <div class="field">
+      <%=f.text_field :title, placeholder: "Titulo", class:"form-control data-title"%>
+    </div>
+    <div class="field">
+      <%=f.text_field :body %>
+    </div> 
+    <div class="field">
+      <%=f.submit "guardar", class:"btn be-red white"%>
+    </div>
+  <%end%>
+</div>

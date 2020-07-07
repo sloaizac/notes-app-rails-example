@@ -1,0 +1,16 @@
+<div class="row">
+  <% @notes.each do |note| %>
+    <div class="col-md-3">
+      <div class="note-box">
+        <h2 class="nav-item"><%= link_to note.title, note %></h2>
+        <div>
+          <%= truncate(note.body, length:80) %>
+        </div>
+        <% if current_user && current_user == note.user %>
+          <span><%= link_to "Eliminar", note, method: :delete %></span>
+          <span><%= link_to "Editar", edit_note_path(note)%></span>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

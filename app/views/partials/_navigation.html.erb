@@ -1,0 +1,27 @@
+  <header>
+    <div class="be-red white large-padding">
+      <ul class="no-list row center-xs middle-xs">
+        <li class="col-md col-sm">
+          <h1 class="no-margin" id="logo"><%= link_to "Notes app", notes_path %></h1>
+        </li>
+        <li class="col-md col-sm nav-item">
+          <%= link_to "notas", notes_path %>
+        </li>
+        <li class="col-md col-sm nav-item">
+          <%= link_to "crear nota", new_note_path %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="col-md col-sm">
+            <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li class="col-md col-sm">
+            <%= link_to "Iniciar sesion", new_user_session_path, method: :get %>
+          </li>
+          <li class="col-md col-sm">
+            <%= link_to "Crear cuenta", new_user_registration_path, method: :get %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </header>
